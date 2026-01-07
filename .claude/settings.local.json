@@ -28,7 +28,21 @@
       "Bash(git init:*)",
       "Bash(gh --version:*)",
       "Bash(gh auth status:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: CheckPoint MVP\n\nFeatures:\n- Mobile app \\(React Native + Expo\\)\n- API backend \\(NestJS + Prisma + PostgreSQL\\)\n- Dashboard \\(Next.js 14\\)\n- Real-time chat via WebSocket\n- Instagram OAuth authentication\n- GPS/QR check-in system\n- Match reveal on dual check-in\n- Push notifications ready\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(gh repo create:*)",
+      "Bash(railway --version:*)",
+      "Bash(railway whoami:*)",
+      "Bash(railway init:*)",
+      "Bash(railway add:*)",
+      "Bash(railway link:*)",
+      "Bash(railway open:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(gh repo view:*)",
+      "Bash(git push:*)",
+      "Bash(gh repo delete:*)",
+      "Bash(gh auth refresh:*)",
+      "Bash(gh repo edit:*)"
     ]
   }
 }
