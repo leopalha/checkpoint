@@ -246,6 +246,54 @@ export class NotificationsService {
     });
   }
 
+  async notifyRematchRequest(
+    recipientId: string,
+    senderId: string,
+    eventName: string,
+  ) {
+    const sender = await this.prisma.user.findUnique({
+      where: { id: senderId },
+      select: { name: true },
+    });
+
+    if (!sender) return;
+
+    await this.sendNotification({
+      userId: recipientId,
+      title: '💜 Nova solicitacao de ReMatch!',
+      body: `Alguém do ${eventName} quer conectar com você`,
+      data: {
+        type: 'rematch_request',
+        eventName,
+        deep_link: 'checkpoint://rematch/requests',
+      },
+    });
+  }
+
+  async notifyRematchAccepted(
+    recipientId: string,
+    accepterId: string,
+    eventName: string,
+  ) {
+    const accepter = await this.prisma.user.findUnique({
+      where: { id: accepterId },
+      select: { name: true },
+    });
+
+    if (!accepter) return;
+
+    await this.sendNotification({
+      userId: recipientId,
+      title: '🎉 ReMatch aceito!',
+      body: `${accepter.name} aceitou sua solicitação do ${eventName}!`,
+      data: {
+        type: 'rematch_accepted',
+        eventName,
+        deep_link: 'checkpoint://rematch/celebration',
+      },
+    });
+  }
+
   private async getUserDeviceToken(userId: string): Promise<string | null> {
     const deviceToken = await this.prisma.deviceToken.findFirst({
       where: { userId },

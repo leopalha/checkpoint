@@ -16,6 +16,7 @@ import { ChatModule } from './modules/chat/chat.module';
 import { OrganizersModule } from './modules/organizers/organizers.module';
 import { UploadsModule } from './modules/uploads/uploads.module';
 import { NotificationsModule } from './modules/notifications/notifications.module';
+import { RematchModule } from './modules/rematch/rematch.module';
 import { HealthController } from './health.controller';
 
 @Module({
@@ -68,6 +69,7 @@ import { HealthController } from './health.controller';
     OrganizersModule,
     UploadsModule,
     NotificationsModule,
+    RematchModule,
   ],
   controllers: [HealthController],
   providers: [

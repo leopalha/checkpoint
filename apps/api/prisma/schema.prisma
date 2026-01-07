@@ -238,3 +238,37 @@ model Theme {
 
   createdAt           DateTime @default(now())
 }
+
+// ============================================
+// REMATCH (Segunda Chance)
+// ============================================
+
+model RematchRequest {
+  id            String   @id @default(cuid())
+  fromUserId    String
+  toUserId      String
+  eventId       String
+  message       String?
+  status        String   @default("pending") // pending, accepted, ignored, expired
+
+  createdAt     DateTime @default(now())
+  respondedAt   DateTime?
+  expiresAt     DateTime // 7 days after event ended
+
+  @@unique([fromUserId, toUserId, eventId])
+  @@index([toUserId, status])
+  @@index([fromUserId, status])
+  @@index([expiresAt])
+}
+
+model UserBlock {
+  id            String   @id @default(cuid())
+  blockerId     String
+  blockedId     String
+
+  createdAt     DateTime @default(now())
+
+  @@unique([blockerId, blockedId])
+  @@index([blockerId])
+  @@index([blockedId])
+}
