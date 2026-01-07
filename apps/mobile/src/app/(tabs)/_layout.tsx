@@ -54,6 +54,15 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="rematch"
+        options={{
+          title: 'ReMatch',
+          tabBarIcon: ({ focused }) => (
+            <TabIcon emoji="🔄" focused={focused} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           title: 'Perfil',

@@ -94,6 +94,66 @@ export const authApi = {
 };
 
 // Users API
+// ReMatch API
+export const rematchApi = {
+  getRequests: async () => {
+    const response = await api.get('/rematches/requests');
+    return response.data;
+  },
+
+  getAvailable: async () => {
+    const response = await api.get('/rematches/available');
+    return response.data;
+  },
+
+  getConnections: async (page = 1, perPage = 20) => {
+    const response = await api.get('/rematches/connections', {
+      params: { page, per_page: perPage },
+    });
+    return response.data;
+  },
+
+  getStats: async () => {
+    const response = await api.get('/rematches/stats');
+    return response.data;
+  },
+
+  sendRequest: async (toUserId: string, eventId: string, message?: string) => {
+    const response = await api.post('/rematches', {
+      toUserId,
+      eventId,
+      message,
+    });
+    return response.data;
+  },
+
+  acceptRequest: async (requestId: string) => {
+    const response = await api.post(`/rematches/${requestId}/accept`);
+    return response.data;
+  },
+
+  ignoreRequest: async (requestId: string) => {
+    const response = await api.patch(`/rematches/${requestId}/ignore`);
+    return response.data;
+  },
+
+  blockUser: async (userId: string) => {
+    const response = await api.post(`/rematches/block/${userId}`);
+    return response.data;
+  },
+
+  unblockUser: async (userId: string) => {
+    const response = await api.delete(`/rematches/block/${userId}`);
+    return response.data;
+  },
+
+  getBlockedUsers: async () => {
+    const response = await api.get('/rematches/blocked');
+    return response.data;
+  },
+};
+
+// Users API
 export const usersApi = {
   updateProfile: async (data: { bio?: string; defaultIntentions?: string[] }) => {
     const response = await api.patch('/users/me', data);

@@ -38,12 +38,29 @@ interface MessagesReadEvent {
   lastMessageId: string;
 }
 
+interface RematchRequestEvent {
+  requestId: string;
+  eventName: string;
+}
+
+interface RematchAcceptedEvent {
+  requestId: string;
+  matchId: string;
+  eventName: string;
+  user: {
+    name: string;
+    profilePicture: string | null;
+  };
+}
+
 interface UseChatOptions {
   onNewMessage?: (message: Message) => void;
   onMatchRevealed?: (data: MatchRevealEvent) => void;
   onTyping?: (data: TypingEvent) => void;
   onMessagesRead?: (data: MessagesReadEvent) => void;
   onUnreadUpdate?: (data: { matchId: string }) => void;
+  onRematchRequest?: (data: RematchRequestEvent) => void;
+  onRematchAccepted?: (data: RematchAcceptedEvent) => void;
 }
 
 export function useChat(options: UseChatOptions = {}) {
@@ -111,6 +128,18 @@ export function useChat(options: UseChatOptions = {}) {
 
       socket.on('unread_update', (data: { matchId: string }) => {
         options.onUnreadUpdate?.(data);
+      });
+
+      socket.on('rematch_request', (data: RematchRequestEvent) => {
+        options.onRematchRequest?.(data);
+      });
+
+      socket.on('rematch_accepted', (data: RematchAcceptedEvent) => {
+        options.onRematchAccepted?.(data);
+      });
+
+      socket.on('match_created', (data: MatchRevealEvent) => {
+        options.onMatchRevealed?.(data);
       });
 
       socketRef.current = socket;
