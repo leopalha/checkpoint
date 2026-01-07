@@ -49,6 +49,9 @@ import { HealthController } from './health.controller';
     ServeStaticModule.forRoot({
       rootPath: join(process.cwd(), 'uploads'),
       serveRoot: '/uploads',
+      serveStaticOptions: {
+        fallthrough: true,
+      },
     }),
 
     // Database
