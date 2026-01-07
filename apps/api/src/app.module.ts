@@ -17,6 +17,8 @@ import { OrganizersModule } from './modules/organizers/organizers.module';
 import { UploadsModule } from './modules/uploads/uploads.module';
 import { NotificationsModule } from './modules/notifications/notifications.module';
 import { RematchModule } from './modules/rematch/rematch.module';
+import { ThemesModule } from './modules/themes/themes.module';
+import { PremiumModule } from './modules/premium/premium.module';
 import { HealthController } from './health.controller';
 
 @Module({
@@ -70,6 +72,8 @@ import { HealthController } from './health.controller';
     UploadsModule,
     NotificationsModule,
     RematchModule,
+    ThemesModule,
+    PremiumModule,
   ],
   controllers: [HealthController],
   providers: [
