@@ -45,7 +45,8 @@
       "Bash(gh repo edit:*)",
       "Bash(git commit:*)",
       "Bash(npm install:*)",
-      "Bash(npx vercel:*)"
+      "Bash(npx vercel:*)",
+      "Bash(curl:*)"
     ]
   }
 }
