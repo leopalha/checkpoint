@@ -1,7 +1,10 @@
 {
-  "name": "@checkpoint/api",
+  "name": "checkpoint-api",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "nest build",
     "dev": "nest start --watch",
@@ -23,8 +26,6 @@
     "db:studio": "prisma studio"
   },
   "dependencies": {
-    "@checkpoint/types": "workspace:*",
-    "@checkpoint/utils": "workspace:*",
     "@nestjs/common": "^10.3.0",
     "@nestjs/config": "^3.2.0",
     "@nestjs/core": "^10.3.0",
@@ -57,7 +58,6 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@checkpoint/config": "workspace:*",
     "@nestjs/cli": "^10.3.0",
     "@nestjs/schematics": "^10.1.0",
     "@nestjs/testing": "^10.3.0",

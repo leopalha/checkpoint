@@ -1,6 +1,7 @@
 import { IsString, IsIn } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { InteractionType } from '@checkpoint/types';
+
+type InteractionType = 'fire' | 'handshake' | 'highfive' | 'carona' | 'ticket' | 'champagne' | 'briefcase' | 'target';
 
 export class SendInteractionDto {
   @ApiProperty({ description: 'Target user ID' })

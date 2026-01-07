@@ -1,6 +1,7 @@
 import { IsString, IsOptional, IsArray, MaxLength, IsIn } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { InteractionType } from '@checkpoint/types';
+
+type InteractionType = 'fire' | 'handshake' | 'highfive' | 'carona' | 'ticket' | 'champagne' | 'briefcase' | 'target';
 
 export class UpdateProfileDto {
   @ApiPropertyOptional({ description: 'User bio', maxLength: 150 })
