@@ -42,7 +42,8 @@
       "Bash(git push:*)",
       "Bash(gh repo delete:*)",
       "Bash(gh auth refresh:*)",
-      "Bash(gh repo edit:*)"
+      "Bash(gh repo edit:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
