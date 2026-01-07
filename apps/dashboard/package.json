@@ -1,5 +1,5 @@
 {
-  "name": "@checkpoint/dashboard",
+  "name": "checkpoint-dashboard",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,9 +13,6 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "@checkpoint/types": "workspace:*",
-    "@checkpoint/ui": "workspace:*",
-    "@checkpoint/utils": "workspace:*",
     "@hookform/resolvers": "^3.3.4",
     "@tanstack/react-query": "^5.0.0",
     "axios": "^1.7.0",
@@ -34,7 +31,6 @@
     "zustand": "^5.0.0"
   },
   "devDependencies": {
-    "@checkpoint/config": "workspace:*",
     "@types/node": "^20.11.0",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",

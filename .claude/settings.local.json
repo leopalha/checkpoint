@@ -44,7 +44,8 @@
       "Bash(gh auth refresh:*)",
       "Bash(gh repo edit:*)",
       "Bash(git commit:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npx vercel:*)"
     ]
   }
 }
