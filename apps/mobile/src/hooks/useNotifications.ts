@@ -19,11 +19,12 @@ Notifications.setNotificationHandler({
 });
 
 export interface NotificationData {
-  type?: 'match' | 'message' | 'event_reminder' | 'event_update';
+  type?: 'match' | 'message' | 'event_reminder' | 'event_update' | 'rematch_request' | 'rematch_accepted';
   matchId?: string;
   eventId?: string;
   matchType?: string;
   eventName?: string;
+  deep_link?: string;
 }
 
 export function useNotifications() {
@@ -62,6 +63,16 @@ export function useNotifications() {
           router.push(`/event/${data.eventId}`);
         } else {
           router.push('/(tabs)/home');
+        }
+        break;
+      case 'rematch_request':
+        router.push('/(tabs)/rematch');
+        break;
+      case 'rematch_accepted':
+        if (data.matchId) {
+          router.push(`/chat/${data.matchId}`);
+        } else {
+          router.push('/(tabs)/rematch');
         }
         break;
       default:
