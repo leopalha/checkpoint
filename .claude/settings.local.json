@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(pnpm install:*)",
+      "Bash(pnpm --filter @checkpoint/api db:generate:*)",
+      "Bash(pnpm turbo typecheck:*)",
+      "Bash(docker compose:*)",
+      "Bash(pnpm turbo build:*)",
+      "Bash(pnpm --filter @checkpoint/api build:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm test:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(pnpm remove:*)",
+      "Bash(pnpm --filter @checkpoint/api test:*)",
+      "Bash(find:*)",
+      "Bash(docker --version:*)",
+      "Bash(Start-Process \"C:\\\\Program Files\\\\Docker\\\\Docker\\\\Docker Desktop.exe\" -ErrorAction SilentlyContinue)",
+      "Bash(Start-Sleep -Seconds 15)",
+      "Bash(docker info:*)",
+      "Bash(psql:*)",
+      "Bash(cmd.exe /c \"start \"\" \"\"C:\\\\Program Files\\\\Docker\\\\Docker\\\\Docker Desktop.exe\"\"\")",
+      "Bash(for i in {1..6})",
+      "Bash(do echo \"Tentativa $i/6...\")",
+      "Bash(break)",
+      "Bash(done)",
+      "Bash(git init:*)",
+      "Bash(gh --version:*)",
+      "Bash(gh auth status:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

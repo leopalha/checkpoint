@@ -1,0 +1,85 @@
+{
+  "$schema": "claude-code-settings",
+  "version": "1.0",
+  "project": "checkmate",
+
+  "manus": {
+    "enabled": true,
+    "version": "7.1",
+    "activationPrompt": ".manus/ACTIVATION_PROMPT_v7.1.md",
+    "autopilot": {
+      "enabled": true,
+      "maxIterations": 50,
+      "stopOnP0Failure": true,
+      "requireTestPass": true
+    }
+  },
+
+  "agentLoop": {
+    "phases": ["analyze", "plan", "execute", "observe", "iterate", "deliver"],
+    "enforceAllPhases": true,
+    "requireReadBeforeEdit": true
+  },
+
+  "scoring": {
+    "enabled": true,
+    "dimensions": 7,
+    "configFile": ".manus/scoring/SCORING_SYSTEM_v7.md",
+    "currentScoreFile": ".manus/scoring/CURRENT_SCORE.md"
+  },
+
+  "agents": {
+    "configFile": ".manus/agents/agent-config.json",
+    "autoConsult": true,
+    "consultationRules": {
+      "simple": { "maxMinutes": 15, "agentsRequired": 0 },
+      "medium": { "maxMinutes": 45, "agentsRequired": 1 },
+      "complex": { "minMinutes": 45, "agentsRequired": "2-4" }
+    }
+  },
+
+  "protocols": {
+    "configFile": ".manus/_archive/PROTOCOLOS_MANUS.md",
+    "totalRules": 20,
+    "enforceAll": true
+  },
+
+  "tasks": {
+    "file": "tasks.md",
+    "statusMarkers": {
+      "pending": "[ ]",
+      "inProgress": "[->]",
+      "completed": "[x]",
+      "blocked": "[!]",
+      "skipped": "[-]"
+    }
+  },
+
+  "quality": {
+    "typescript": {
+      "strict": true,
+      "noAny": true,
+      "asyncAwait": true
+    },
+    "testing": {
+      "minCoverage": 70,
+      "requireE2E": true
+    },
+    "security": {
+      "zodValidation": true,
+      "authRequired": true,
+      "rateLimiting": true
+    }
+  },
+
+  "hooks": {
+    "preCommit": [
+      "npm run typecheck",
+      "npm run lint",
+      "npm test"
+    ],
+    "prePush": [
+      "npm run build"
+    ]
+  }
+}

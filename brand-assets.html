@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckMate - Brand Assets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7C3AED;
+            --secondary: #D946EF;
+            --accent: #22D3EE;
+            --bg-dark: #0F0F1A;
+            --bg-surface: #1A1A2E;
+            --text-primary: #F8FAFC;
+            --text-secondary: #A1A1AA;
+            --gradient-primary: linear-gradient(135deg, #7C3AED 0%, #D946EF 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 60px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .logo-item {
+            text-align: center;
+        }
+
+        .logo-preview {
+            padding: 40px;
+            border-radius: 24px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+
+        .logo-preview.dark {
+            background: var(--bg-surface);
+        }
+
+        .logo-preview.light {
+            background: #FFFFFF;
+        }
+
+        .logo-preview.gradient {
+            background: var(--gradient-primary);
+        }
+
+        .logo-label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .logo-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Logo Styles */
+        .logo-full {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon.gradient {
+            background: var(--gradient-primary);
+            box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+        }
+
+        .logo-icon.white {
+            background: white;
+        }
+
+        .logo-icon.dark {
+            background: var(--bg-dark);
+        }
+
+        .logo-icon svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .logo-text {
+            font-size: 32px;
+            font-weight: 800;
+        }
+
+        .logo-text.gradient {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text.white {
+            color: white;
+        }
+
+        .logo-text.dark {
+            color: var(--bg-dark);
+        }
+
+        /* App Icon */
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 28px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 40px rgba(124, 58, 237, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+        }
+
+        .app-icon svg {
+            width: 64px;
+            height: 64px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Pin Icon SVG */
+        .pin-icon {
+            fill: white;
+        }
+
+        .pin-icon.purple {
+            fill: var(--primary);
+        }
+
+        .checkmark {
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .checkmark.white {
+            stroke: white;
+        }
+
+        /* Colors Grid */
+        .colors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .color-item {
+            text-align: center;
+        }
+
+        .color-box {
+            height: 100px;
+            border-radius: 16px;
+            margin-bottom: 12px;
+        }
+
+        .color-name {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .color-hex {
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-family: monospace;
+        }
+
+        /* Icon Grid */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 24px;
+        }
+
+        .icon-item {
+            text-align: center;
+        }
+
+        .icon-box {
+            width: 64px;
+            height: 64px;
+            background: var(--bg-surface);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 28px;
+        }
+
+        .icon-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Typography */
+        .type-sample {
+            margin-bottom: 24px;
+        }
+
+        .type-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        /* Download buttons */
+        .download-section {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--bg-surface);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-download:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <h1>CheckMate</h1>
+    <p class="subtitle">Brand Assets & Guidelines</p>
+
+    <!-- Logo Variations -->
+    <section class="section">
+        <h2 class="section-title">Logo Variations</h2>
+        <div class="logo-grid">
+            <!-- Full Logo - Dark BG -->
+            <div class="logo-item">
+                <div class="logo-preview dark">
+                    <div class="logo-full">
+                        <div class="logo-icon gradient">
+                            <svg viewBox="0 0 100 100">
+                                <path class="pin-icon" d="M50 10 C25 10 10 30 10 50 C10 65 25 80 50 95 C75 80 90 65 90 50 C90 30 75 10 50 10Z"/>
+                                <polyline class="checkmark white" points="35 50 45 62 65 38"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text gradient">CheckMate</span>
+                    </div>
+                </div>
+                <div class="logo-label">Logo Principal</div>
+                <div class="logo-desc">Para fundos escuros</div>
+            </div>
+
+            <!-- Full Logo - Light BG -->
+            <div class="logo-item">
+                <div class="logo-preview light">
+                    <div class="logo-full">
+                        <div class="logo-icon gradient">
+                            <svg viewBox="0 0 100 100">
+                                <path class="pin-icon" d="M50 10 C25 10 10 30 10 50 C10 65 25 80 50 95 C75 80 90 65 90 50 C90 30 75 10 50 10Z"/>
+                                <polyline class="checkmark white" points="35 50 45 62 65 38"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text dark">CheckMate</span>
+                    </div>
+                </div>
+                <div class="logo-label">Logo Principal</div>
+                <div class="logo-desc">Para fundos claros</div>
+            </div>
+
+            <!-- Full Logo - Gradient BG -->
+            <div class="logo-item">
+                <div class="logo-preview gradient">
+                    <div class="logo-full">
+                        <div class="logo-icon white">
+                            <svg viewBox="0 0 100 100">
+                                <path class="pin-icon purple" d="M50 10 C25 10 10 30 10 50 C10 65 25 80 50 95 C75 80 90 65 90 50 C90 30 75 10 50 10Z"/>
+                                <polyline class="checkmark" style="stroke: white;" points="35 50 45 62 65 38"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text white">CheckMate</span>
+                    </div>
+                </div>
+                <div class="logo-label">Logo Invertido</div>
+                <div class="logo-desc">Para fundos coloridos</div>
+            </div>
+
+            <!-- App Icon -->
+            <div class="logo-item">
+                <div class="logo-preview dark">
+                    <div class="app-icon">
+                        <svg viewBox="0 0 100 100">
+                            <path class="pin-icon" d="M50 8 C23 8 8 28 8 50 C8 67 23 82 50 97 C77 82 92 67 92 50 C92 28 77 8 50 8Z"/>
+                            <polyline class="checkmark white" points="33 50 44 63 67 36"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="logo-label">App Icon</div>
+                <div class="logo-desc">iOS & Android</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colors -->
+    <section class="section">
+        <h2 class="section-title">Color Palette</h2>
+        <div class="colors-grid">
+            <div class="color-item">
+                <div class="color-box" style="background: #7C3AED;"></div>
+                <div class="color-name">Primary</div>
+                <div class="color-hex">#7C3AED</div>
+            </div>
+            <div class="color-item">
+                <div class="color-box" style="background: #D946EF;"></div>
+                <div class="color-name">Secondary</div>
+                <div class="color-hex">#D946EF</div>
+            </div>
+            <div class="color-item">
+                <div class="color-box" style="background: #22D3EE;"></div>
+                <div class="color-name">Accent</div>
+                <div class="color-hex">#22D3EE</div>
+            </div>
+            <div class="color-item">
+                <div class="color-box" style="background: #10B981;"></div>
+                <div class="color-name">Success</div>
+                <div class="color-hex">#10B981</div>
+            </div>
+            <div class="color-item">
+                <div class="color-box" style="background: #EF4444;"></div>
+                <div class="color-name">Error</div>
+                <div class="color-hex">#EF4444</div>
+            </div>
+            <div class="color-item">
+                <div class="color-box" style="background: linear-gradient(135deg, #7C3AED 0%, #D946EF 100%);"></div>
+                <div class="color-name">Primary Gradient</div>
+                <div class="color-hex">135° #7C3AED → #D946EF</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Icons -->
+    <section class="section">
+        <h2 class="section-title">Iconography</h2>
+        <div class="icon-grid">
+            <div class="icon-item">
+                <div class="icon-box">🏠</div>
+                <div class="icon-label">Home</div>
+            </div>
+            <div class="icon-item">
+                <div class="icon-box">🔍</div>
+                <div class="icon-label">Search</div>
+            </div>
+            <div class="icon-item">
+                <div class="icon-box">📍</div>
+                <div class="icon-label">Check-in</div>
+            </div>
+            <div class="icon-item">
+                <div class="icon-box">💬</div>
+                <div class="icon-label">Messages</div>
+            </div>
+            <div class="icon-item">
+                <div class="icon-box">👤</div>
+                <div class="icon-label">Profile</div>
+            </div>
+            <div class="icon-item">
+                <div class="icon-box">🤝</div>
+                <div class="icon-label">Connect</div>
+            </div>
+            <div class="icon-item">
+                <div class="icon-box">👥</div>
+                <div class="icon-label">People</div>
+            </div>
+            <div class="icon-item">
+                <div class="icon-box">💜</div>
+                <div class="icon-label">Match</div>
+            </div>
+            <div class="icon-item">
+                <div class="icon-box">📸</div>
+                <div class="icon-label">Instagram</div>
+            </div>
+            <div class="icon-item">
+                <div class="icon-box">⚙️</div>
+                <div class="icon-label">Settings</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="section">
+        <h2 class="section-title">Typography</h2>
+        
+        <div class="type-sample">
+            <div class="type-label">Display - Inter ExtraBold 36px</div>
+            <div style="font-size: 36px; font-weight: 800; letter-spacing: -0.02em;">
+                Encontre. Conecte. Reencontre.
+            </div>
+        </div>
+        
+        <div class="type-sample">
+            <div class="type-label">Title - Inter Bold 28px</div>
+            <div style="font-size: 28px; font-weight: 700;">
+                Nunca mais perca uma conexão
+            </div>
+        </div>
+        
+        <div class="type-sample">
+            <div class="type-label">Subtitle - Inter SemiBold 22px</div>
+            <div style="font-size: 22px; font-weight: 600;">
+                Descubra quem está onde
+            </div>
+        </div>
+        
+        <div class="type-sample">
+            <div class="type-label">Body - Inter Regular 16px</div>
+            <div style="font-size: 16px; line-height: 1.5;">
+                CheckMate é a plataforma que te mostra quem está nos mesmos eventos que você 
+                e permite reconectar depois. Networking que funciona de verdade.
+            </div>
+        </div>
+        
+        <div class="type-sample">
+            <div class="type-label">Caption - Inter Medium 12px</div>
+            <div style="font-size: 12px; font-weight: 500; color: var(--text-secondary);">
+                Há 45 minutos · 47 pessoas presentes · Tech Meetup SP
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads -->
+    <section class="section">
+        <h2 class="section-title">Downloads</h2>
+        <div class="download-section">
+            <a href="#" class="btn-download">📁 Logo Pack (SVG, PNG)</a>
+            <a href="#" class="btn-download">🎨 Figma Design System</a>
+            <a href="#" class="btn-download">📱 App Icon Set</a>
+            <a href="#" class="btn-download">📋 Brand Guidelines PDF</a>
+        </div>
+    </section>
+</body>
+</html>

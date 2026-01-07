@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckMate - Marketing Templates</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7C3AED;
+            --secondary: #D946EF;
+            --accent: #22D3EE;
+            --bg-dark: #0F0F1A;
+            --bg-surface: #1A1A2E;
+            --gradient-primary: linear-gradient(135deg, #7C3AED 0%, #D946EF 100%);
+            --gradient-accent: linear-gradient(135deg, #D946EF 0%, #22D3EE 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #111;
+            color: white;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: #888;
+            margin-bottom: 60px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 32px;
+        }
+
+        .templates-grid {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+        .template-item {
+            text-align: center;
+        }
+
+        .template-label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 16px;
+            margin-bottom: 4px;
+        }
+
+        .template-size {
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Instagram Post Template */
+        .ig-post {
+            width: 320px;
+            height: 320px;
+            background: var(--gradient-primary);
+            border-radius: 8px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ig-post::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+        }
+
+        .ig-post-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ig-post-logo-icon {
+            width: 36px;
+            height: 36px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .ig-post-logo-text {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .ig-post-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .ig-post-headline {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 12px;
+        }
+
+        .ig-post-subtext {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .ig-post-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Instagram Story Template */
+        .ig-story {
+            width: 216px;
+            height: 384px;
+            background: var(--bg-dark);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ig-story::before {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -100px;
+            width: 400px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.4) 0%, transparent 70%);
+        }
+
+        .ig-story::after {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -150px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(217, 70, 239, 0.3) 0%, transparent 70%);
+        }
+
+        .ig-story-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .ig-story-emoji {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .ig-story-text {
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .ig-story-highlight {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ig-story-subtext {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .ig-story-cta {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 24px;
+        }
+
+        .ig-story-swipe {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: #888;
+            font-size: 11px;
+            z-index: 1;
+        }
+
+        /* Feature Post */
+        .feature-post {
+            width: 320px;
+            height: 320px;
+            background: var(--bg-surface);
+            border-radius: 8px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-post-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .feature-post-icon.purple {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(217, 70, 239, 0.2) 100%);
+        }
+
+        .feature-post-icon.cyan {
+            background: linear-gradient(135deg, rgba(34, 211, 238, 0.2) 0%, rgba(16, 185, 129, 0.2) 100%);
+        }
+
+        .feature-post-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .feature-post-desc {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .feature-post-footer {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-post-logo-small {
+            width: 28px;
+            height: 28px;
+            background: var(--gradient-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .feature-post-brand {
+            font-size: 13px;
+            font-weight: 600;
+            color: #666;
+        }
+
+        /* App Store Banner */
+        .app-banner {
+            width: 600px;
+            height: 300px;
+            background: linear-gradient(135deg, #0F0F1A 0%, #1A1A2E 100%);
+            border-radius: 12px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-banner::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 60%);
+        }
+
+        .app-banner-content {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .app-banner-tagline {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .app-banner-title {
+            font-size: 32px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .app-banner-desc {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 24px;
+        }
+
+        .app-banner-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .store-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: black;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .store-btn-icon {
+            font-size: 20px;
+        }
+
+        .store-btn-text {
+            line-height: 1.2;
+        }
+
+        .store-btn-small {
+            font-size: 9px;
+            opacity: 0.7;
+        }
+
+        .app-banner-mockup {
+            width: 140px;
+            height: 280px;
+            background: #000;
+            border-radius: 24px;
+            padding: 6px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .app-banner-screen {
+            width: 100%;
+            height: 100%;
+            background: var(--bg-dark);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .app-banner-screen-content {
+            text-align: center;
+        }
+
+        .app-banner-screen-logo {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin: 0 auto 12px;
+        }
+
+        .app-banner-screen-text {
+            font-size: 12px;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Testimonial Card */
+        .testimonial {
+            width: 320px;
+            background: var(--bg-surface);
+            border-radius: 16px;
+            padding: 28px;
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 40px;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+            top: 16px;
+            right: 24px;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--gradient-accent);
+        }
+
+        .testimonial-name {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .testimonial-role {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .testimonial-stars {
+            margin-top: 16px;
+            color: #F59E0B;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CheckMate</h1>
+    <p class="subtitle">Marketing Templates & Social Media Assets</p>
+
+    <!-- Instagram Posts -->
+    <section class="section">
+        <h2 class="section-title">Instagram Feed Posts (1080x1080)</h2>
+        <div class="templates-grid">
+            <!-- Hero Post -->
+            <div class="template-item">
+                <div class="ig-post">
+                    <div class="ig-post-logo">
+                        <div class="ig-post-logo-icon">📍</div>
+                        <span class="ig-post-logo-text">CheckMate</span>
+                    </div>
+                    <div class="ig-post-content">
+                        <div class="ig-post-headline">Nunca mais perca uma conexão</div>
+                        <div class="ig-post-subtext">Descubra quem está nos mesmos eventos que você</div>
+                    </div>
+                    <div class="ig-post-cta">
+                        📱 Baixe grátis
+                    </div>
+                </div>
+                <div class="template-label">Post Hero</div>
+                <div class="template-size">1080 x 1080px</div>
+            </div>
+
+            <!-- Feature Post 1 -->
+            <div class="template-item">
+                <div class="feature-post">
+                    <div class="feature-post-icon purple">📍</div>
+                    <div class="feature-post-title">Check-in Social</div>
+                    <div class="feature-post-desc">
+                        Marque presença em eventos e locais. Veja quem está lá em tempo real.
+                    </div>
+                    <div class="feature-post-footer">
+                        <div class="feature-post-logo-small">📍</div>
+                        <span class="feature-post-brand">CheckMate</span>
+                    </div>
+                </div>
+                <div class="template-label">Feature: Check-in</div>
+                <div class="template-size">1080 x 1080px</div>
+            </div>
+
+            <!-- Feature Post 2 -->
+            <div class="template-item">
+                <div class="feature-post">
+                    <div class="feature-post-icon cyan">🤝</div>
+                    <div class="feature-post-title">ReMatch</div>
+                    <div class="feature-post-desc">
+                        Conheceu alguém legal? Reconecte até 7 dias depois pelo evento em comum.
+                    </div>
+                    <div class="feature-post-footer">
+                        <div class="feature-post-logo-small">📍</div>
+                        <span class="feature-post-brand">CheckMate</span>
+                    </div>
+                </div>
+                <div class="template-label">Feature: ReMatch</div>
+                <div class="template-size">1080 x 1080px</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Stories -->
+    <section class="section">
+        <h2 class="section-title">Instagram Stories (1080x1920)</h2>
+        <div class="templates-grid">
+            <!-- Story 1 -->
+            <div class="template-item">
+                <div class="ig-story">
+                    <div class="ig-story-content">
+                        <div class="ig-story-emoji">🎉</div>
+                        <div class="ig-story-text">
+                            Vai no <span class="ig-story-highlight">evento</span>?
+                        </div>
+                        <div class="ig-story-subtext">Descubra quem mais vai estar lá</div>
+                        <div class="ig-story-cta">Baixar CheckMate</div>
+                    </div>
+                    <div class="ig-story-swipe">
+                        <span>↑</span>
+                        <span>Arraste para cima</span>
+                    </div>
+                </div>
+                <div class="template-label">Story: Evento</div>
+                <div class="template-size">1080 x 1920px</div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="template-item">
+                <div class="ig-story" style="background: linear-gradient(180deg, #7C3AED 0%, #D946EF 100%);">
+                    <div class="ig-story-content">
+                        <div class="ig-story-emoji">🤝</div>
+                        <div class="ig-story-text" style="color: white;">
+                            47 pessoas estão aqui agora
+                        </div>
+                        <div class="ig-story-subtext" style="color: rgba(255,255,255,0.8);">Tech Meetup SP</div>
+                        <div class="ig-story-cta" style="background: white; color: var(--primary);">Ver quem está</div>
+                    </div>
+                    <div class="ig-story-swipe" style="color: rgba(255,255,255,0.7);">
+                        <span>↑</span>
+                        <span>Arraste para cima</span>
+                    </div>
+                </div>
+                <div class="template-label">Story: Check-in</div>
+                <div class="template-size">1080 x 1920px</div>
+            </div>
+
+            <!-- Story 3 -->
+            <div class="template-item">
+                <div class="ig-story">
+                    <div class="ig-story-content">
+                        <div class="ig-story-emoji">💜</div>
+                        <div class="ig-story-text">
+                            É um <span class="ig-story-highlight">Match!</span>
+                        </div>
+                        <div class="ig-story-subtext">Você e @ana se conectaram</div>
+                        <div class="ig-story-cta">Abrir conversa</div>
+                    </div>
+                    <div class="ig-story-swipe">
+                        <span>↑</span>
+                        <span>Arraste para cima</span>
+                    </div>
+                </div>
+                <div class="template-label">Story: Match</div>
+                <div class="template-size">1080 x 1920px</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Store Banner -->
+    <section class="section">
+        <h2 class="section-title">App Store Feature Graphic</h2>
+        <div class="templates-grid">
+            <div class="template-item">
+                <div class="app-banner">
+                    <div class="app-banner-content">
+                        <div class="app-banner-tagline">✨ NOVO APP</div>
+                        <div class="app-banner-title">
+                            Networking que funciona de verdade
+                        </div>
+                        <div class="app-banner-desc">
+                            Descubra quem está nos eventos e reconecte com quem você conheceu
+                        </div>
+                        <div class="app-banner-buttons">
+                            <div class="store-btn">
+                                <span class="store-btn-icon">🍎</span>
+                                <div class="store-btn-text">
+                                    <div class="store-btn-small">Download on the</div>
+                                    <div>App Store</div>
+                                </div>
+                            </div>
+                            <div class="store-btn">
+                                <span class="store-btn-icon">▶️</span>
+                                <div class="store-btn-text">
+                                    <div class="store-btn-small">GET IT ON</div>
+                                    <div>Google Play</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-banner-mockup">
+                        <div class="app-banner-screen">
+                            <div class="app-banner-screen-content">
+                                <div class="app-banner-screen-logo">📍</div>
+                                <div class="app-banner-screen-text">CheckMate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-label">App Store Banner</div>
+                <div class="template-size">1024 x 500px</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section">
+        <h2 class="section-title">Testimonial Cards</h2>
+        <div class="templates-grid">
+            <div class="template-item">
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">
+                        "Conheci meu sócio num evento e quase perdi o contato. Com o CheckMate, reconectamos no dia seguinte. Hoje temos uma startup juntos!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"></div>
+                        <div>
+                            <div class="testimonial-name">Maria Santos</div>
+                            <div class="testimonial-role">Founder, TechStartup</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="template-label">Testimonial Card</div>
+                <div class="template-size">Flexível</div>
+            </div>
+
+            <div class="template-item">
+                <div class="testimonial">
+                    <div class="testimonial-quote">"</div>
+                    <div class="testimonial-text">
+                        "Uso em todos os eventos que organizo. A taxa de networking aumentou 40% desde que implementamos. Os participantes adoram!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background: linear-gradient(135deg, #22D3EE, #10B981);"></div>
+                        <div>
+                            <div class="testimonial-name">Pedro Costa</div>
+                            <div class="testimonial-role">Event Organizer</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="template-label">Testimonial Card</div>
+                <div class="template-size">Flexível</div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

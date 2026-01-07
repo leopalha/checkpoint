@@ -1,0 +1,23 @@
+{
+  "name": "@checkpoint/utils",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@checkpoint/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@checkpoint/config": "workspace:*",
+    "typescript": "^5.4.0",
+    "rimraf": "^5.0.5"
+  }
+}
