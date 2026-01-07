@@ -1,0 +1,18 @@
+[phases.setup]
+nixPkgs = ["nodejs_20"]
+aptPkgs = ["openssl"]
+
+[phases.install]
+cmds = [
+  "npm install -g pnpm@8.15.0",
+  "pnpm install --frozen-lockfile"
+]
+
+[phases.build]
+cmds = [
+  "pnpm turbo build --filter=@checkpoint/api",
+  "cd apps/api && npx prisma generate"
+]
+
+[start]
+cmd = "cd apps/api && npx prisma migrate deploy && node dist/main.js"

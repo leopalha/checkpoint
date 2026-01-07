@@ -5,8 +5,7 @@
   "description": "CheckPoint - Social presence platform with contextual matching",
   "packageManager": "pnpm@8.15.0",
   "engines": {
-    "node": ">=18.0.0",
-    "pnpm": ">=8.0.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "build": "turbo run build",
@@ -19,7 +18,9 @@
     "test": "turbo run test",
     "test:coverage": "turbo run test:coverage",
     "clean": "turbo run clean && rimraf node_modules",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "cd apps/api && node dist/main.js",
+    "postinstall": "npx prisma generate --schema=apps/api/prisma/schema.prisma || true"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
